@@ -3,8 +3,8 @@ import React from 'react'
 const WeatherDate = props => {
     return (
         <div className="previsao__data">
-            <h1 className="previsao__data">{promps.date}</h1>
-            <p>{promps.estado}</p>
+            <h1 className="previsao__data">{props.date}</h1>
+            <p>{props.estado}</p>
         </div>
     )
 }
@@ -20,27 +20,27 @@ const WeatherImg = props => {
 const WeatherTemperatura = props => {
     return (
         <div className="previsao-temperatura">
-            <p>{promps.nivelMax}</p><spam>{promps.temperaturaMax}</spam>
-            <p>{promps.nivelMin}</p><spam>{promps.temperaturaMin}</spam>
+            <p>{props.nivelMax}</p><spam>{props.temperaturaMax}</spam>
+            <p>{props.nivelMin}</p><spam>{props.temperaturaMin}</spam>
         </div>
     )
 }
 
 const Weather_table = props => {
     return(
-        <div className="previsao-container">
+        <div className="previsao">
            <WeatherDate
-            date={promps.date}
-            estado={promps.estado}
+            date={props.date}
+            estado={props.estado}
            /> 
            <WeatherImg
-           img={promps.img}
+           img={props.img}
            />
            <WeatherTemperatura
-           nivelMax={promps.nivelMax}
-           temperaturaMax={promps.temperaturaMax}
-           nivelMin={promps.nivelMin}
-           temperaturaMin={promps.nivelMin}
+           nivelMax={props.nivelMax}
+           temperaturaMax={props.temperaturaMax}
+           nivelMin={props.nivelMin}
+           temperaturaMin={props.temperaturaMin}
            />
         </div>
     )

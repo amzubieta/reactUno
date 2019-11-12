@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import SolImg from './img/sol.png';
+import NuvensImg from './img/nuvens.png';
+import PrevisaoTempo from './componentes/PrevisaoTempo';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="previsao-container">
+      <PrevisaoTempo
+        data="31/05/2019"
+        resumo="Ensolarado"
+        img={SolImg}
+        temperatura={{
+          max: 31,
+          min: 20
+        }}
+      />
+
+      <PrevisaoTempo
+        data="01/06/2019"
+        resumo="Nublado"
+        img={NuvensImg}
+        temperatura={{
+          max: 25,
+          min: 18
+        }}
+      />
     </div>
   );
 }
