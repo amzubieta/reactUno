@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import sol from './sol.png';
+import nuvens from './nuvens.png'
+import Weather_table from './Components/Weather_table'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Weather_table
+      date="31/05/2019"
+      estado="Ensolarado"
+      img={sol}
+      nivelMax="Máxima"
+      temperaturaMax="31ºC"
+      nivelMin="Minima"
+      temperaturaMin="20ºC"
+      />
+      
     </div>
   );
 }
