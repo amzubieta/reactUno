@@ -1,42 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css';   
 
-// const nameString = Angel;
-// const saudacao = obj => `Olá, ${nameString}`;
+class Contador extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contador: 0
+    };
+  }
 
-// {
-//   const saudacao = 
-//     nome: "Larysa",
-// }
+  adicionarUm = () => {
+    this.setState((prevState) => {
+      return {
+        contador: prevState.contador + 1
+      }
+    })
+  }
 
-// const saudacao = obj => `Olá, ${obj.nome} ${obj.sobrenome}`;
-
-const contador = 0;
-
-const vereficaContador = () => {
-  if (contador === 0) {
-    return (<p>Contador iniciado</p>)
-  } else {
-    return (<p>Contador iniciado</p>)
+  render() {
+    return (
+      <div>
+        <p>{this.state.contador}</p>
+        <button className="btnMaisUm" onClick={this.adicionarUm}>+1</button>
+        <button className="btnMenosUm">-1</button>
+        <button className="btnResetar">resetar</button>
+      </div>
+    );
   }
 }
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <h1>Contador</h1>
-      <p>{contador}</p>
-      {vereficaContador()}
-      <div>
-        <button className="claseMasUno">+1</button>
-        <button className="claseMenosUno">-1</button>
-        <button className="claseResetar">Reset</button>
-      </div>
-
+      <h2>Contador</h2>
+      <Contador />
     </div>
   );
 }
-
-
 export default App;

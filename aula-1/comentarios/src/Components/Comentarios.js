@@ -1,28 +1,19 @@
 import React from 'react';
 
-const DivDetalles = props => {
+class Comentario extends React.Component {
+  render() {
     return (
+      <div className="comentario">
+        <img className="comentario__perfil" src={this.props.imagem} />
         <div>
-            <h3 className="comentario__nome">{props.nome}</h3>
-            <p className="comentario__subtitulo">{props.titulo}</p>
-            <hr />
-            <p className="comentario">{props.descricao}</p>
+          <h2 className="comentario__nome">{this.props.nome}</h2>
+          <h3 className="comentario__subtitulo">{this.props.subtitulo}</h3>
+          <hr />
+          <p>{this.props.comentario}</p>
         </div>
+      </div>
     )
+  }
 }
 
-
-const Comentarios = props => {
-    return (
-        <div className="comentario">
-            <img className="comentario__perfil" src={props.img} />
-            <DivDetalles
-                nome={props.nome}
-                titulo={props.titulo}
-                descricao={props.descricao}
-            />
-        </div>
-    )
-}
-
-export default Comentarios;
+export default Comentario;
