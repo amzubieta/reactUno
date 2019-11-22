@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.css'
 
-export default function Mensagem(props) {
+function Mensagem(props) {
     return (
         <div className='mensagem'>
             <img
@@ -17,4 +17,6 @@ export default function Mensagem(props) {
             </div>
         </div>
     )
-} 
+}
+
+export default Mensagem

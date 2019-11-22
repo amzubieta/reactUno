@@ -1,35 +1,42 @@
 import React from 'react'
-import{ getMesagens } from '../../service/base'
-
+import { getMensagens } from '../../service/base'
+import Mensagem from './componentes/Mensagem'
 
 import './styles.css'
 
-class chat extends React.Component{
-  constructor(props){
+class Chat extends React.Component {
+  constructor(props) {
     super(props)
-    this.state={
-      mensagens:''
+    this.state = {
+      mensagens: []
     }
   }
 
-  componentDidMount(){
-    getMesagens()
-    .then(response =>{
-      this
-    })
-    .catch(error=>{
-
-    })
+  componentDidMount() {
+    getMensagens()
+      .then(response => {
+        this.setState({
+          mensagens: response.data
+        })
+      })
+      .catch(error => {
+        console.error(error)
+      })
   }
 
-  render()
+  render() {
+    return (
+      <section className='chat'>
+        <h2>Mensagens</h2>
+        {this.state.mensagens.length > 0
+          ? this.state.mensagens.map(mensagem => {
+            return <Mensagem mensagem={mensagem} key={mensagem.id} />
+          })
+          : <span>Carregando mensagens :D</span>
+        }
+      </section>
+    )
+  }
 }
 
-function Chat () {
-  return (
-    <section className='chat'>
-      <h2>Essa é a página de Chat</h2>
-    </section>
-  )
-}
-
+export default Chat
